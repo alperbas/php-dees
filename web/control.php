@@ -47,7 +47,7 @@ if (isset($_POST['domain']) && !empty($_POST['domain'])) {
 
     if (preg_match($domain_regex, $_POST['domain'])) {
         //include_once('../scripts/tndees-functions.php');
-        include_once dirname(__FILE__) . "../scripts/tndees-functions.php";
+        include_once dirname(__FILE__) . "/../scripts/tndees-functions.php";
         $resultg1 = get_domain_ip($_POST['domain'], $dnsg1);
         $resultg2 = get_domain_ip($_POST['domain'], $dnsg2);
         $result2 = get_domain_ip($_POST['domain'], $dns2);

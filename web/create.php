@@ -65,7 +65,7 @@
                 $controlresult = $row;
             }
             //include_once('../scripts/tndees-functions.php');
-            include_once dirname(__FILE__) . "../scripts/tndees-functions.php";
+            include_once dirname(__FILE__) . "/../scripts/tndees-functions.php";
             if (!is_null($controlresult)) {
                 if ($controlresult['action'] == $action && $controlresult['esb_mail_id'] == $mailid) {
                     $domainError = 'Domain ve Mail ID kaydı zaten var!';
