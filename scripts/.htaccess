@@ -1,0 +1,3 @@
+# block web access
+Order deny,allow
+Deny from allow
