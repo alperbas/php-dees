@@ -1,2 +1,2 @@
 # Domain Erisim Engelleme Sistemi #
-scriptler ve web arayüzü
+scriptler ve web arayÃ¼zÃ¼
