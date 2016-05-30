@@ -29,7 +29,7 @@ server is up and running
 */
 
 if ($debug == 1) { logger("echo", "Domain listesi aliniyor.\n"); }
-$domains = db_execute("local", "SELECT id,domain,source,timestamp,action FROM domains WHERE timestamp >= NOW() - INTERVAL $interval MINUTE AND source = 'EEKA'");
+$domains = db_execute("local", "SELECT id,domain,source,timestamp,action FROM domains WHERE timestamp > NOW() - INTERVAL $interval MINUTE AND source = 'EEKA'");
 if ($debug == 1) { logger("echo", "TNDEEDB veritabani kontrol edildi, ".$domains->num_rows." adet domain bulundu.\n"); }
 if ($domains->num_rows > 0) {
     logger("file", "TNDEEDB veritabani kontrol edildi, ".$domains->num_rows." adet domain bulundu.", $logfile);
