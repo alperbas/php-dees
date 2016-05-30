@@ -36,7 +36,7 @@
         line-height: 25px;
         cursor: pointer;
         transition: 0.3s;
-    }       
+    }
     .closebtn:hover {
         color: black;
     }
@@ -50,11 +50,11 @@
         <div class="alert info"> blue
         <div class="alert warning"> yellow
     -->
-    
+
     <div class="alert">
         <strong>HATA: </strong> Customer'dan giris yapınız.
         <br>
-        <a href="http://custdev/">customer.netone.net.tr</a>
+        <a href="http://customer/">customer.netone.net.tr</a>
         <br>
         Customer->Aracalar->Teknik->NMS->TNDEES
     </div>
