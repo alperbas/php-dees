@@ -172,7 +172,7 @@ function is_dnszones_sync() {
     while ($dnsrow = mysqli_fetch_assoc($dns)) {
     	$hostname[$i] = $dnsrow['hostname'];
     	$ip[$i] = $dnsrow['ip'];
-        if (ping($ip[$i], "4")) {
+        if (ping($ip[$i], "4") || ping($ip[$i], "4")) {
             $prevzonecount[$i] = rndc("zonecount", $hostname[$i], $ip[$i]);
             if ($debug == 1) { logger("echo", $hostname[$i]." zones: ".$prevzonecount[$i]."\n"); }
             if ($i > 0 && $prevzonecount[$i] != $prevzonecount[($i-1)] ){
@@ -269,7 +269,7 @@ function tndees($domain, $source = "ESB", $action = NULL, $ip = NULL, $hostname 
         while ($dnsrow = mysqli_fetch_assoc($dns)) {
         	$hostname[$i] = $dnsrow['hostname'];
         	$ip[$i] = $dnsrow['ip'];
-            if (ping($ip[$i], "4")) {
+            if (ping($ip[$i], "4") || ping($ip[$i], "4")) {
                 $prevzonecount[$i] = rndc("zonecount", $hostname[$i], $ip[$i]);
                 if ($debug == 1) { logger("echo", $hostname[$i]." zones: ".$prevzonecount[$i]."\n"); }
             } else {
@@ -287,7 +287,7 @@ function tndees($domain, $source = "ESB", $action = NULL, $ip = NULL, $hostname 
 
     for ($i=0;$i<sizeof($hostname);$i++){
         if ($debug == 1) { logger("echo", "Karar: ".$hostname[$i]." $source $action $domain\n"); }
-        if (ping($ip[$i], "4")) {
+        if (ping($ip[$i], "4") || ping($ip[$i], "4")) {
             if ($debug == 1) { logger("echo", $hostname[$i]." erisilebilir durumda.\n"); }
             if ($action == "E") {
                 $resultrndc = rndc("addzone", $hostname[$i], $ip[$i], $domain, $source);
