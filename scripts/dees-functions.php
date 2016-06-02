@@ -16,6 +16,8 @@ function db_execute($server, $query) {
     global $debug;
 
     // get db info
+    if(is_file(dirname(__FILE__) . "/dees-db-info.php"))
+        include dirname(__FILE__) . "/dees-db-info.php";
 
     // which db?
     if ($server == "eeka") {
