@@ -14,21 +14,22 @@ $n1dns = "193.192.122.33";
 
 function db_execute($server, $query) {
     global $debug;
+
+    // get db info
+
     // which db?
     if ($server == "eeka") {
-        $database_hostname = "193.192.100.86";
-        $database_username = "root";
-        $database_password = "tib2010tib";
-        $database_default = "ISPDB";
+        $database = db_eeka();
     } elseif ($server = "local") {
-        $database_hostname = "localhost";
-        $database_username = "root";
-        $database_password = 'BNM*p3Y"';
-        $database_default = "TNDEEDB";
+        $database = db_local();
     } else {
         logger("echo", "server must be set eeka or local.\n");
         return 0;
     }
+    $database_hostname = $database['hostname'];
+    $database_username = $database['username'];
+    $database_password = $database['password'];
+    $database_default = $database['default'];
 
     // Connect and execute query to DB
     $connection = new mysqli($database_hostname, $database_username, $database_password, $database_default);
